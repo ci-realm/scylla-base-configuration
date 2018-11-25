@@ -24,23 +24,23 @@
      system = "x86_64-linux";
      supportedFeatures = ["kvm" "nixos-test" "big-parallel" "benchmark"];
     }
+    { hostName = "panzer1";
+      maxJobs = 2;
+      speedFactor = 1;
+      sshKey = "/etc/scylla/id_buildfarm";
+      sshUser = "root";
+      system = "x86_64-linux";
+      supportedFeatures = ["kvm" "nixos-test" "big-parallel" "benchmark"];
+    }
+    { hostName = "panzer2";
+      maxJobs = 2;
+      speedFactor = 1;
+      sshKey = "/etc/scylla/id_buildfarm";
+      sshUser = "root";
+      system = "x86_64-linux";
+      supportedFeatures = ["kvm" "nixos-test" "big-parallel" "benchmark"];
+    }
       /*
-          { hostName = "panzer1";
-            maxJobs = 2;
-            speedFactor = 1;
-            sshKey = "/etc/nix/id_buildfarm";
-            sshUser = "root";
-            system = "x86_64-linux";
-            supportedFeatures = ["kvm" "nixos-test" "big-parallel" "benchmark"];
-          }
-          { hostName = "panzer2";
-            maxJobs = 2;
-            speedFactor = 1;
-            sshKey = "/etc/nix/id_buildfarm";
-            sshUser = "root";
-            system = "x86_64-linux";
-            supportedFeatures = ["kvm" "nixos-test" "big-parallel" "benchmark"];
-          }
           { hostName = "nvn";
             maxJobs = 1;
             speedFactor = 1;
@@ -73,8 +73,8 @@
         Hostname 172.17.6.242
 
       # arm
-      Host nvn
-        Hostname 172.17.1.250
+      # Host nvn
+      #  Hostname 172.17.1.250
     '';
   services.openssh.knownHosts =
     [
